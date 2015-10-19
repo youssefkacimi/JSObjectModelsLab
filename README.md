@@ -1,15 +1,105 @@
-# Template Project for Labs [![Build Status](https://travis-ci.org/ULH-WebDevelopment/TemplateLab.svg?branch=master)](https://travis-ci.org/ULH-WebDevelopment/TemplateLab)
+# JavaScript Object Models Lab [![Build Status](https://travis-ci.org/ULH-WebDevelopment/JSObjectModelsLab.svg?branch=master)](https://travis-ci.org/ULH-WebDevelopment/JSObjectModelsLab)
 
 This project is a template for the lab sessions of the Master 2 IDOD course at the [University of Le Havre](https://www.univ-lehavre.fr).
 
 The purpose of this template is to ease the completion and testing of labs.
 
-
-
 ## Assignment
 
 
-This section is a placeholder to describe the assignment for this lab.  It should define what is expected of you.
+Ce travail est en 3 parties :
+  1. rédiger des tests unitaires et compléter un modèle objet _très_ simple, utilisant le pattern de creation `Object.create`
+  2. Créer un modèle objet pour la gestion de biens immobiliers à partir de données géographiques (appelé ici le module `Shapes`)
+  3. Création de tests assynchrones pour le module `Shapes` et tests avec un fichier de données au format JSON.
+
+### Partie 1 : Tests et Completion d'un modèle simple
+
+Le module XXX (voir  app/js/modules/XXX)  est un modèle de données simpliste de gestion de contraventions générique, pouvant être étendu pour différents pays.
+
+- Rédiger des tests unitaires pour tester individuellement toutes les fonctionnalités du modèle.
+- Compléter le code manquant dans le module (repéré par un commentaire /* TODO */)
+
+
+### Partie 2 : Le Modèle Objet `Shapes`
+
+Considering a JSON dataset containing geographical map data, one want to create a read only model (no write access) which represents the various geographical objects.
+
+We want to be able to create javascript objects according to the following class model.
+
+![`Shapes` UML Class Diagram](app/images/uml.png)
+
+
+
+Here are some constraints:
+
+- The `Shapes` module is to be created in the `app/scripts/modules` folder (see previous lab for example).
+- The `nodes` attribute is an array of objects (`[{x:23,y:45},{x:3,y:5},{x:12,y:0}]`) that can be simplified into an array of arrays (`[[23,45],[3,5],[12,0]]`). Use `Array.map()` to do it.
+- The  `toSvgPath()` method should return a string such as:
+          `"M 23 45 L 3 5 L 12 0"` for a node like the above one. Again `Array.map()` would be useful.
+
+- From the previous UML Model create read only objects with protected/hidden data.
+- The created module must validate the unit tests written in `tests/test.js`.
+
+### Part 3 : Create async tests for the `Shapes` module
+
+
+The Object model must be able to create object given data such as the one in the JSON file : `app/data/eure.json`. Here is a sample :
+```json
+[
+  {
+    "_id": "-630059",
+    "building": true,
+    "nodes": [
+        {
+            "x": 608.0,
+            "y": 302.0
+        },
+        {
+            "x": 610.0,
+            "y": 305.0
+        },
+        {
+            "x": 608.0,
+            "y": 302.0
+        }
+    ]
+  },
+  {
+    "_id": "-630043",
+    "building": false,
+    "name": "Bassin Paul Vatine",
+    "natural": "water",
+    "nodes": [
+        {
+            "e": "e"
+        }
+    ]
+  },
+  {
+    "_id": "-630016",
+    "building": false,
+    "highway": "residential",
+    "name": "Place D\u00e9sir\u00e9 Rebeuf",
+    "nodes": [
+        {
+            "x": 633.0,
+            "y": 453.0
+        },
+        {
+            "x": 677.0,
+            "y": 438.0
+        }
+    ]
+  },
+  ...
+]
+```
+
+
+- Building, Road, Amenity, and Natural objects are created based on the JSON data downloaded.
+- When testing with the JSON file, store new objects in containers (Arrays).
+- Compute the overall and average surface of available buildings and include it in the tests.
+- Write JUnit test that are asynchronous. They first load the JSON file then create as much objects there are in the JSON file. Then do some tests on the number of objects created, the surfaces, etc.
 
 
 Knowing the assignment, follow the steps below in order to complete the lab.
