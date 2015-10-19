@@ -33,6 +33,7 @@ We want to be able to create javascript objects according to the following class
 Here are some constraints:
 
 - The `Shapes` module is to be created in the `app/scripts/modules` folder (see previous lab for example).
+- The `Shapes` uses to [Functional Pattern](https://github.com/ULH-WebDevelopment/lectures/blob/master/js-basics-2.md#inheritance-with-the-functional-pattern) in order to create the Object Model. 
 - The `nodes` attribute is an array of objects (`[{x:23,y:45},{x:3,y:5},{x:12,y:0}]`) that can be simplified into an array of arrays (`[[23,45],[3,5],[12,0]]`). Use `Array.map()` to do it.
 - The  `toSvgPath()` method should return a string such as:
           `"M 23 45 L 3 5 L 12 0"` for a node like the above one. Again `Array.map()` would be useful.
