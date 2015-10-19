@@ -14,10 +14,10 @@ Ce travail est en 3 parties :
 
 ### Partie 1 : Tests et Completion d'un modèle simple
 
-Le module XXX (voir  app/js/modules/XXX)  est un modèle de données simpliste de gestion de contraventions générique, pouvant être étendu pour différents pays.
+Le module SpeedCheck (voir  `app/scripts/modules/SpeedCheck.js`)  est un modèle de données simpliste de gestion de contraventions générique, pouvant être étendu pour différents pays en fonction de leur réglementation (plaque d'immatriculation et vitesse maximum authorisée).
 
 - Rédiger des tests unitaires pour tester individuellement toutes les fonctionnalités du modèle.
-- Compléter le code manquant dans le module (repéré par un commentaire /* TODO */)
+- Compléter le code manquant dans le module (repéré par un commentaire `/* TODO */`)
 
 
 ### Partie 2 : Le Modèle Objet `Shapes`
@@ -33,7 +33,7 @@ We want to be able to create javascript objects according to the following class
 Here are some constraints:
 
 - The `Shapes` module is to be created in the `app/scripts/modules` folder (see previous lab for example).
-- The `Shapes` uses to [Functional Pattern](https://github.com/ULH-WebDevelopment/lectures/blob/master/js-basics-2.md#inheritance-with-the-functional-pattern) in order to create the Object Model. 
+- The `Shapes` uses to [Functional Pattern](https://github.com/ULH-WebDevelopment/lectures/blob/master/js-basics-2.md#inheritance-with-the-functional-pattern) in order to create the Object Model.
 - The `nodes` attribute is an array of objects (`[{x:23,y:45},{x:3,y:5},{x:12,y:0}]`) that can be simplified into an array of arrays (`[[23,45],[3,5],[12,0]]`). Use `Array.map()` to do it.
 - The  `toSvgPath()` method should return a string such as:
           `"M 23 45 L 3 5 L 12 0"` for a node like the above one. Again `Array.map()` would be useful.
