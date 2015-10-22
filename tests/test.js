@@ -200,7 +200,7 @@
     /*-----------------------------------*/
 
     // TODO Write the whole test module for testing with the app/data/eure.json file.
-
+    var obj;
     module('Asynchronous Unit Test Module', {
         setup: function() {
             stop();
